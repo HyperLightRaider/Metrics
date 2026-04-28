@@ -5,11 +5,11 @@ MVP веб-приложения «Metrics», реализующий полный
 
 ## Команда
 
-\- Беличенко Андрей: team lead, DevOps
+- Беличенко Андрей: team lead, DevOps
 
-\- Хабибов Тимур: backend, базы данных
+- Хабибов Тимур: backend, базы данных
 
-\- Юсупов Максуд: frontend, дизайн
+- Юсупов Максуд: frontend, дизайн
 
 
 
@@ -21,21 +21,10 @@ MVP веб-приложения «Metrics», реализующий полный
 
 ## Технологии
 
-\- Frontend: HTML, CSS, JavaScript
+- Frontend: HTML, CSS, JavaScript
 
-\- Backend: Python, Flask
+- Backend: Python, Flask
 
-\- База данных: SQLite 
+- База данных: SQLite 
 
-\- Инструменты: GitHub, Figma
-
-
-
-## Как запустить проект
-
-Инструкция будет дополняться по мере разработки
-
-## Ссылки
-
-Ссылки будут дополнятся по мере разработки
-
+- Инструменты: GitHub, Figma
