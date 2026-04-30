@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Быстрая фиксация состояния</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }
+        .row { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 6px; }
+        input[type="range"] { width: 100%; }
+        #toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 4px;
+            display: none;
+        }
+        button {
+            padding: 10px 18px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Фиксация состояния (до 1 минуты)</h1>
+
+    <div class="row">
+        <label for="sleep">Сон (часов): <span id="sleepValue">7</span></label>
+        <input type="range" id="sleep" min="0" max="12" value="7" />
+    </div>
+
+    <div class="row">
+        <label for="energy">Энергия: <span id="energyValue">5</span></label>
+        <input type="range" id="energy" min="1" max="10" value="5" />
+    </div>
+
+    <div class="row">
+        <label for="mood">Настроение: <span id="moodValue">5</span></label>
+        <input type="range" id="mood" min="1" max="10" value="5" />
+    </div>
+
+    <div class="row">
+        <label for="productivity">Продуктивность: <span id="productivityValue">5</span></label>
+        <input type="range" id="productivity" min="1" max="10" value="5" />
+    </div>
+
+    <button id="saveBtn">Сохранить</button>
+
+    <div id="toast">Сохранено!</div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
