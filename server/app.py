@@ -13,7 +13,8 @@ from models import db, User  # импортируем наши модели
 app = Flask(__name__, static_folder='../client', static_url_path='')
 
 app.config['SECRET_KEY'] = 'super-secret-key-change-me'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///metrics.db'
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'instance', 'metrics.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
