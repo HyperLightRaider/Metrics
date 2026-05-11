@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Дашборд — Metrics</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h2 id="greeting">Здравствуйте, ...</h2>
+    <button id="logoutBtn" class="outline">Выйти</button>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h3>Быстрая запись</h3>
+      <form id="entryForm" class="grid">
+        <label>
+          Дата
+          <input type="date" id="entry-date" required>
+        </label>
+        <label>
+          Сон (часы)
+          <input type="number" id="entry-sleep" step="0.1" min="0" required>
+        </label>
+        <label>
+          Энергия (1–5)
+          <input type="number" id="entry-energy" min="1" max="5" required>
+        </label>
+        <label>
+          Настроение (1–5)
+          <input type="number" id="entry-mood" min="1" max="5" required>
+        </label>
+        <label>
+          Продуктивность (1–5)
+          <input type="number" id="entry-productivity" min="1" max="5" required>
+        </label>
+        <label>
+          Активность (1–5)
+          <input type="number" id="entry-activity" min="1" max="5" required>
+        </label>
+        <button type="submit" class="full">Сохранить запись</button>
+      </form>
+      <p id="entry-success" class="success"></p>
+      <p id="entry-error" class="error"></p>
+    </section>
+
+    <section class="card">
+      <h3>Графики (неделя)</h3>
+      <canvas id="metricsChart" height="120"></canvas>
+    </section>
+
+    <section class="card">
+      <h3>Аналитика</h3>
+      <p id="correlationText" class="muted">Загрузка...</p>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initDashboardPage();
+    });
+  </script>
+</body>
+</html>
