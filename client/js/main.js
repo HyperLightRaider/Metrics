@@ -191,7 +191,7 @@ async function loadCorrelation() {
   }
 
   if (!data.top_correlation) {
-    el.textContent = data.message || 'Недостаточно данных для анализа';
+    el.textContent = data.message || 'Недостаточно данных для аналитики';
     return;
   }
 

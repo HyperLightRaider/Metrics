@@ -2,27 +2,24 @@ import pandas as pd
 
 
 def compute_top_correlation(entries):
-    """
-    Вычисляет самую сильную корреляцию между метриками.
-    """
 
     if len(entries) < 3:
         return None
 
     data = {
-        "sleep": [],
-        "energy": [],
-        "mood": [],
-        "productivity": [],
-        "activity": []
+        "сон": [],
+        "энергия": [],
+        "натсроение": [],
+        "продуктивность": [],
+        "активность": []
     }
 
     for entry in entries:
-        data["sleep"].append(float(entry.sleep))
-        data["energy"].append(int(entry.energy))
-        data["mood"].append(int(entry.mood))
-        data["productivity"].append(int(entry.productivity))
-        data["activity"].append(int(entry.activity))
+        data["сон"].append(float(entry.sleep))
+        data["энергия"].append(int(entry.energy))
+        data["натсроение"].append(int(entry.mood))
+        data["продуктивность"].append(int(entry.productivity))
+        data["активность"].append(int(entry.activity))
 
     df = pd.DataFrame(data)
 
@@ -43,14 +40,14 @@ def compute_top_correlation(entries):
 
     abs_val = abs(best_value)
 
-    if abs_val <= 0.3:
+    if abs_val <= 0.5:
         strength = "слабая"
-    elif abs_val <= 0.7:
+    elif abs_val <= 0.75:
         strength = "умеренная"
     else:
         strength = "сильная"
 
-    direction = "положительная" if best_value >= 0 else "отрицательная"
+    direction = "положительная корреляция" if best_value >= 0 else "отрицательная корреляция"
 
     return {
         "pair": list(best_pair),
