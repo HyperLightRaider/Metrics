@@ -47,7 +47,7 @@ def register():
         return jsonify({'error': 'Имя пользователя уже занято'}), 409
 
     new_user = User(username=username)
-    new_user.set_password(password)  # хешируем пароль
+    new_user.set_password(password)
     db.session.add(new_user)
     db.session.commit()
 
@@ -224,7 +224,7 @@ def correlation():
     if result is None:
         return jsonify({
             "top_correlation": None,
-            "message": "Недостаточно данных для анализа"
+            "message": "Недостаточно данных для аналитики"
         }), 200
 
     return jsonify({

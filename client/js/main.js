@@ -1,4 +1,3 @@
-// ===== Общий helper для запросов =====
 async function apiFetch(path, options = {}) {
   const res = await fetch('/api' + path, {
     credentials: 'include',
@@ -10,7 +9,6 @@ async function apiFetch(path, options = {}) {
   return { res, data };
 }
 
-// ===== index.html =====
 async function checkAuthAndRedirect() {
   const { res } = await apiFetch('/user', { method: 'GET' });
   if (res.ok) {
@@ -20,7 +18,6 @@ async function checkAuthAndRedirect() {
   }
 }
 
-// ===== login.html =====
 function initLoginPage() {
   const form = document.getElementById('loginForm');
   const errorEl = document.getElementById('login-error');
@@ -45,7 +42,6 @@ function initLoginPage() {
   });
 }
 
-// ===== register.html =====
 function initRegisterPage() {
   const form = document.getElementById('registerForm');
   const msgEl = document.getElementById('reg-message');
@@ -72,7 +68,6 @@ function initRegisterPage() {
   });
 }
 
-// ===== dashboard.html =====
 let metricsChart = null;
 
 function initDashboardPage() {
